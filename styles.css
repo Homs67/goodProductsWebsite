@@ -1,0 +1,97 @@
+/* Base */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+
+/* Colors from Figma frame */
+:root {
+  --bg: #f7f6ff;
+  --text: #000000;
+  --muted: rgba(0,0,0,0.8);
+  --button-bg: #000000;
+  --button-fg: #f7f6ff;
+}
+
+.site-bg { background: var(--bg); }
+
+.frame {
+  min-height: 100dvh;
+  max-width: 540px;
+  margin: 0 auto;
+  padding: 34px 16px; /* match top spacing; side padding for small screens */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  animation: gp-spin 10s linear infinite;
+  transform-origin: 50% 50%;
+  will-change: transform;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px; /* 12 in Figma scale */
+  text-align: center;
+}
+
+.text-block { color: var(--text); }
+.text-block h1 {
+  font-family: "Mariupol Strong", ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: clamp(40px, 8vw, 72px);
+  line-height: 0.9;
+  margin: 0;
+}
+.text-block p {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 16px 0 0;
+}
+
+.button {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 60px;
+  background: var(--button-bg);
+  color: var(--button-fg);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+.button:hover {
+  background: #ffffff;
+  color: #000000;
+}
+.button:focus { outline: 2px solid #5b9bff; outline-offset: 2px; }
+
+.footer {
+  color: var(--text);
+  opacity: 0.8;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 24px;
+  text-align: center;
+}
+
+/* Larger screens: center the frame more like Figma */
+@media (min-width: 1200px) {
+  .frame { padding-top: 34px; }
+}
+
+@keyframes gp-spin {
+  to { transform: rotate(360deg); }
+}
+
