@@ -1,7 +1,8 @@
 /* Fonts */
 @font-face {
   font-family: "Mariupol Strong";
-  src: url("assets/fonts/Mariupol_Strong.otf") format("opentype");
+  src: url("assets/fonts/Mariupol_Strong.woff2") format("woff2"),
+       url("assets/fonts/Mariupol_Strong.otf") format("opentype");
   font-style: normal;
   font-weight: 900;
   font-display: swap;
